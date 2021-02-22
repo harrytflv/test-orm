@@ -1,0 +1,20 @@
+version: "3"
+services:
+  crdb:
+    container_name: crdb1
+    image: cockroachdb/cockroach:v20.1.9
+    command: start-single-node --insecure
+    ports:
+      - "26257:26257"
+      - "8080:8080"
+    volumes:
+      - crdb-data:/cockroach/cockroach-data
+    networks:
+      - test-orm
+
+volumes:
+  crdb-data:
+
+networks:
+  test-orm:
+    driver: bridge
