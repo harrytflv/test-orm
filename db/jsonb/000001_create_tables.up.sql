@@ -7,11 +7,13 @@ CREATE TABLE IF NOT EXISTS users (
     nick_name STRING,
     date_of_birth STRING,
     drivers_license JSONB,
-    passport JSONB
+    passport JSONB,
+    drivers_license2 JSONB,
+    passport2 JSONB
 );
 
 CREATE TABLE IF NOT EXISTS credit_cards (
     user_id STRING,
     card_number STRING,
     security_code STRING
-)
+);

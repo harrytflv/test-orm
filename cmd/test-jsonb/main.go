@@ -4,17 +4,18 @@ import (
 	"log"
 	"time"
 
+	"github.com/upper/db/v4/adapter/cockroachdb"
+
 	"github.com/harrytflv/test-orm/pkg/user"
 	"github.com/harrytflv/test-orm/pkg/userinline"
 	"github.com/harrytflv/test-orm/pkg/utils"
-	"github.com/upper/db/v4/adapter/cockroachdb"
 )
 
 var (
 	settings = cockroachdb.ConnectionURL{
-		Host:     "192.168.50.45",
-		Database: "test",
-		User:     "test",
+		Host:     "localhost",
+		Database: "defaultdb",
+		User:     "root",
 		Options: map[string]string{
 			"sslmode": "disable",
 		},
@@ -93,7 +94,7 @@ var (
 
 func main() {
 	jsonb()
-	inline()
+	// inline()
 }
 
 func jsonb() {
